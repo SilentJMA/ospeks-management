@@ -183,7 +183,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -216,7 +216,7 @@
       <workItem from="1617405696112" duration="2770000" />
       <workItem from="1617450627710" duration="1029000" />
       <workItem from="1617451956774" duration="383000" />
-      <workItem from="1617459227465" duration="3012000" />
+      <workItem from="1617459227465" duration="3573000" />
     </task>
     <servers />
   </component>
@@ -270,10 +270,10 @@
       <screen x="0" y="25" width="1680" height="963" />
     </state>
     <state x="660" y="434" key="NewPhpFileDialog/0.25.1680.963@0.25.1680.963" timestamp="1617233349560" />
-    <state x="349" y="142" key="SettingsEditor" timestamp="1617463311555">
+    <state x="349" y="142" key="SettingsEditor" timestamp="1617463517634">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
-    <state x="349" y="142" key="SettingsEditor/0.25.1680.963@0.25.1680.963" timestamp="1617463311555" />
+    <state x="349" y="142" key="SettingsEditor/0.25.1680.963@0.25.1680.963" timestamp="1617463517634" />
     <state width="595" height="445" key="SwitcherDM" timestamp="1617236837203">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
@@ -290,5 +290,9 @@
       <screen x="0" y="25" width="1680" height="963" />
     </state>
     <state x="540" y="142" width="726" height="729" key="find.popup/0.25.1680.963@0.25.1680.963" timestamp="1616597313418" />
+    <state x="505" y="236" key="search.everywhere.popup" timestamp="1617463407224">
+      <screen x="0" y="25" width="1680" height="963" />
+    </state>
+    <state x="505" y="236" key="search.everywhere.popup/0.25.1680.963@0.25.1680.963" timestamp="1617463407224" />
   </component>
 </project>
