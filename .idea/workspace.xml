@@ -19,7 +19,22 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="39c28bfd-eb7b-4b12-afc1-5760adf1ee7e" name="Default Changelist" comment="" />
+    <list default="true" id="39c28bfd-eb7b-4b12-afc1-5760adf1ee7e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/categories/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2c955153-3d0a-4358-a9fd-b73cc4d4942b.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2c955153-3d0a-4358-a9fd-b73cc4d4942b/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/categories/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,7 +45,7 @@
     <execution />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$USER_HOME$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -181,9 +196,9 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/categories" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -217,6 +232,7 @@
       <workItem from="1617450627710" duration="1029000" />
       <workItem from="1617451956774" duration="383000" />
       <workItem from="1617459227465" duration="3573000" />
+      <workItem from="1617463952131" duration="6584000" />
     </task>
     <servers />
   </component>
@@ -266,14 +282,18 @@
       <screen x="0" y="25" width="1680" height="963" />
     </state>
     <state width="290" height="457" key="HiddenNamespacesPopup/0.25.1680.963@0.25.1680.963" timestamp="1617460900971" />
+    <state x="609" y="236" key="NewPhpClassDialog" timestamp="1617473304517">
+      <screen x="0" y="25" width="1680" height="963" />
+    </state>
+    <state x="609" y="236" key="NewPhpClassDialog/0.25.1680.963@0.25.1680.963" timestamp="1617473304517" />
     <state x="660" y="434" key="NewPhpFileDialog" timestamp="1617233349560">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
     <state x="660" y="434" key="NewPhpFileDialog/0.25.1680.963@0.25.1680.963" timestamp="1617233349560" />
-    <state x="349" y="142" key="SettingsEditor" timestamp="1617463517634">
+    <state x="349" y="142" key="SettingsEditor" timestamp="1617463982775">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
-    <state x="349" y="142" key="SettingsEditor/0.25.1680.963@0.25.1680.963" timestamp="1617463517634" />
+    <state x="349" y="142" key="SettingsEditor/0.25.1680.963@0.25.1680.963" timestamp="1617463982775" />
     <state width="595" height="445" key="SwitcherDM" timestamp="1617236837203">
       <screen x="0" y="25" width="1680" height="963" />
     </state>

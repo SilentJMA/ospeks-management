@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Order;
+use App\Product;
+use App\Supplier;
 use Illuminate\Http\Request;
 use App\Dashboard;
 
@@ -14,8 +18,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $orders = Order::all()->count();
+        $products = Product::all()->count();
+        $categories = Category::all()->count();
+        $suppliers = Supplier::all()->count();
 
-        return view('dashboard');
+        return view('dashboard',compact('orders','products','suppliers','categories'));
 
     }
 
