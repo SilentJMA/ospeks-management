@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,9 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        return view('products.create', compact('categories'));
+
     }
 
     /**
@@ -37,7 +40,28 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required',
+            'sku' => 'required',
+            'status' => 'required',
+        ]);
+
+        $path = $request->file('image')->store('images','public');
+
+        Product::create([
+            'name' => $request->name,
+            'image' => $request->image,
+            'description' => $request->description,
+            'price' => $request->price,
+            'sku' => $request->sku,
+            'quantity' => $request->quantity,
+            'status' => $request->status,
+            'image' => $path
+
+        ]);
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -59,7 +83,10 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        $product = Product::findorFail($id);
+        $categories = Category::all();
+
+        return view('products.edit', compact('product','categories'));
     }
 
     /**
@@ -71,7 +98,26 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'name' => 'required',
+            'price' => 'required|decimal',
+            'sku' => 'required',
+            'status' => 'required',
+        ]);
+        $product = Product::findorFail($id);
+
+        $product->update([
+            'name' => $request->name,
+            'image' => $request->image,
+            'description' => $request->description,
+            'price' => $request->price,
+            'sku' => $request->sku,
+            'quantity' => $request->quantity,
+            'status' => $request->status,
+            'image' => ''        ]);
+
+        return redirect()->route('products.index');
     }
 
     /**
@@ -82,6 +128,9 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $product = Product::findorFail($id);
+        $product->delete();
+
+        return redirect()->route('products.index');
     }
 }
