@@ -1,9 +1,9 @@
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://ospeks.com" target="_blank"><img src="https://blog.ospeks.com/wp-content/uploads/2020/09/ospeks-without-background.png" width="400"></a></p>
 
 ## About Ospeks-Management#
 
- Laravel7 baseded Web Logistics Application for Startup Brands
+ Laravel7 based Web Logistics Application for Startup Brands
 It's a light weight Application and i'm working on it.
 
 it will contain :
