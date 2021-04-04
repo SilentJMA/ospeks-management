@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Auth::routes();
 
+Route::group(['middleware' => 'auth'], function (){
+
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::resource('orders', 'OrderController');
 Route::resource('products', 'ProductController');
 Route::resource('suppliers', 'SupplierController');
 Route::resource('categories', 'CategoryController');
 Route::resource('settings', 'SettingController');
 
-
+});

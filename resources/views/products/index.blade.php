@@ -36,7 +36,7 @@
                                 <tbody>
                                 @forelse( $products as $product)
                                     <tr>
-                                    <td>{{ $product->image }}</td>
+                                    <td><img src="{{ $product->image }}" alt="{{ $product->name }}"></td>
                                     <td>{{ $product->name }}</td>
                                     <td>{{ $product->description }}</td>
                                     <td>{{ $product->sku }}</td>

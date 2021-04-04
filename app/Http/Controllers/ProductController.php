@@ -44,11 +44,8 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'sku' => 'required',
-            'status' => 'required',
         ]);
-
-        $path = $request->file('image')->store('images','public');
-
+        //$image = addMediaFromRequest('image')->toMediaCollection('images');
         Product::create([
             'name' => $request->name,
             'image' => $request->image,
@@ -56,10 +53,9 @@ class ProductController extends Controller
             'price' => $request->price,
             'sku' => $request->sku,
             'quantity' => $request->quantity,
-            'status' => $request->status,
-            'image' => $path
-
         ]);
+
+
 
         return redirect()->route('products.index');
     }
@@ -83,7 +79,7 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $product = Product::findorFail($id);
+        $product = Product::findOrFail($id);
         $categories = Category::all();
 
         return view('products.edit', compact('product','categories'));
@@ -101,9 +97,8 @@ class ProductController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'price' => 'required|decimal',
+            'price' => 'required',
             'sku' => 'required',
-            'status' => 'required',
         ]);
         $product = Product::findorFail($id);
 
@@ -114,8 +109,7 @@ class ProductController extends Controller
             'price' => $request->price,
             'sku' => $request->sku,
             'quantity' => $request->quantity,
-            'status' => $request->status,
-            'image' => ''        ]);
+        ]);
 
         return redirect()->route('products.index');
     }
@@ -133,4 +127,6 @@ class ProductController extends Controller
 
         return redirect()->route('products.index');
     }
+
+
 }
