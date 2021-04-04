@@ -17,7 +17,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="/products">products</a></li>
+                    <li class="breadcrumb-item"><a href="/products">{{ ucfirst( Request::segment(1)) }}</a></li>
                     <li class="breadcrumb-item active">Edit : {{ $product->name }}</li>
                 </ol>
             </div>
@@ -27,7 +27,7 @@
         <div class="col-md-12">
             <div class="card card-primary">
                 <div class="card-header">
-                    <h3 class="card-title">Add product</h3>
+                    <h3 class="card-title">Add {{ ucfirst( Request::segment(1)) }}</h3>
                 </div>
                 <form action="{{ route('products.update', $product->id) }}" method="POST" enctype="multipart/form-data">
                     @method('PUT')
@@ -70,6 +70,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-outline-success">Update</button>
+                        <a href="{{ url()->previous() }}" class="btn btn-outline-primary">Back</a>
                     </div>
                 </form>
                 <!-- /.card-body -->

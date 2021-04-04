@@ -3,7 +3,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Add product</h1>
+                <h1>Add {{ ucfirst( Request::segment(1)) }}</h1>
                 @if ($errors->any())
                     <div class="alert alert-danger">
                         <ul>
@@ -17,7 +17,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="{{route('products.index')}}">{{ ucfirst( Request::segment(1)) }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('suppliers.index')}}">{{ ucfirst( Request::segment(1)) }}</a></li>
                     <li class="breadcrumb-item active">{{ ucfirst( Request::segment(2)) }}</li>
                 </ol>
             </div>
@@ -25,11 +25,11 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <div class="card card-primary">
+            <div class="card card-info">
                 <div class="card-header">
-                    <h3 class="card-title">Add product</h3>
+                    <h3 class="card-title">Add {{ ucfirst( Request::segment(1)) }}</h3>
                 </div>
-                <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('suppliers.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="card-body">
                         <div class="form-group">
@@ -37,38 +37,34 @@
                             <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Enter name" />
                         </div>
                         <div class="form-group">
-                            <label>Description</label>
-                            <textarea class="form-control" name ="description" rows="3" placeholder="Enter ...">{{ old('description') }}</textarea>
+                            <label for="exampleInputEmail1">Address</label>
+                            <input type="text" class="form-control" name="address" value="{{ old('address') }}" placeholder="Enter address" />
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">SKU</label>
-                            <input type="text" class="form-control" name="sku" value="{{ old('sku') }}" />
+                            <label for="exampleInputEmail1">Phone</label>
+                            <input type="tel" class="form-control" name="phone" value="{{ old('phone') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Price</label>
-                            <input class="form-control" name="price" value="{{ old('price') }}" type="number" min="1" step="any" />
+                            <label for="exampleInputEmail1">Email</label>
+                            <input class="form-control" name="email" value="{{ old('email') }}" type="email"  />
                         </div>
                         <div class="form-group">
-                            <label>Category</label>
-                            <select name="category_id" class="form-control">
-                                @foreach($categories as $category)
-                                <option value="{{ $category->id }}" @if($category->id == old('category_id')) selected @endif>{{ $category->name }}</option>
-                                @endforeach
-                            </select>
+                            <label for="exampleInputEmail1">Country</label>
+                            <input type="country" class="form-control" name="country" value="{{ old('country') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputEmail1">Quantity</label>
-                            <input type="number" class="form-control" name="quantity" value="{{ old('quantity') }}" />
+                            <label for="exampleInputFile">URL</label>
+                            <input type="url" class="form-control" name="url" value="{{ old('url') }}" />
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputFile">Image</label>
-                            <input type="url" class="form-control" name="image" value="{{ old('image') }}" />
+                            <label>Note</label>
+                            <textarea class="form-control" name ="note" rows="3" placeholder="Enter ...">{{ old('address') }}</textarea>
                         </div>
                     </div>
                     <!-- /.card-body -->
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <button type="submit" class="btn btn-outline-success">Create</button>
                     </div>
                 </form>
                 <!-- /.card-body -->

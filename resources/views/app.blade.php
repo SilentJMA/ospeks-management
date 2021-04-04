@@ -36,7 +36,7 @@
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
         <a href="index3.html" class="brand-link">
-            <img src="{{ asset('dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+            <i class="nav-icon fas fa-tasks"></i>
             <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
         </a>
 
@@ -48,26 +48,32 @@
                     <!-- Add icons to the links using the .nav-icon class
                          with font-awesome or any other icon font library -->
                     <li class="nav-item">
-                        <a href="{{ route('dashboard') }}" class="nav-link active">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p>
-                                Dashboard
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
+                        <a href="{{ route('dashboard') }}" class="nav-link {{ (Request::segment(1) =='dashboard')? 'active' : '' }}">
+                            <i class="nav-icon fas fa-home"></i>
+                            <p>Dashboard</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/suppliers" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
-                            <p>
-                                Suppliers
-                                <span class="right badge badge-danger">New</span>
-                            </p>
+                        <a href="{{ route('orders.index') }}" class="nav-link {{ (Request::segment(1) =='orders')? 'active' : '' }}">
+                            <i class="nav-icon fas fa-shopping-basket"></i>
+                            <p>Orders</p>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/categories" class="nav-link">
-                            <i class="nav-icon fas fa-th"></i>
+                        <a href="{{ route('products.index') }}" class="nav-link {{ (Request::segment(1) =='products')? 'active' : '' }}">
+                            <i class="nav-icon fas fa-layer-group"></i>
+                            <p>Products</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('suppliers.index') }}" class="nav-link {{ (Request::segment(1) =='suppliers')? 'active' : '' }}">
+                            <i class="nav-icon fas fa-warehouse"></i>
+                            <p>Suppliers</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{ route('categories.index') }}" class="nav-link {{ (Request::segment(1) =='categories')? 'active' : '' }}">
+                            <i class="nav-icon fas fa-object-group"></i>
                             <p>
                                 Categories
                                 <span class="right badge badge-danger">New</span>
@@ -75,40 +81,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/orders" class="nav-link">
-                            <i class="nav-icon fas fa-copy"></i>
-                            <p>
-                                Orders
-                                <i class="fas fa-angle-left right"></i>
-                                <span class="badge badge-info right">6</span>
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/settings" class="nav-link">
-                            <i class="nav-icon fas fa-chart-pie"></i>
-                            <p>
-                                Settings
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/products" class="nav-link">
-                            <i class="nav-icon fas fa-tree"></i>
-                            <p>
-                                Products
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
+                        <a href="{{ route('settings.index') }}" class="nav-link {{ (Request::segment(1) =='settings')? 'active' : '' }}">
+                            <i class="nav-icon fas fa-sliders-h"></i>
+                            <p>Settings</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="#" onclick="document.getElementById('logout-form').submit()" class="nav-link">
                             <i class="nav-icon fas fa-tree"></i>
-                            <p>
-                                Logout
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
+                            <p>Logout</p>
                         </a>
                     </li>
                     <form action="{{ route('logout') }}" action="POST" id="logout-form">

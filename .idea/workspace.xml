@@ -20,25 +20,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39c28bfd-eb7b-4b12-afc1-5760adf1ee7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/products/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ospeks-management.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ospeks-management.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/products/show.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/suppliers/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/suppliers/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DashboardController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Supplier.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/create.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,12 +205,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/products" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/suppliers" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/suppliers" />
       <recent name="$PROJECT_DIR$/resources/views/products" />
       <recent name="$PROJECT_DIR$/resources/views/categories" />
       <recent name="$PROJECT_DIR$/resources/views" />
@@ -247,7 +243,7 @@
       <workItem from="1617450627710" duration="1029000" />
       <workItem from="1617451956774" duration="383000" />
       <workItem from="1617459227465" duration="3573000" />
-      <workItem from="1617463952131" duration="19023000" />
+      <workItem from="1617463952131" duration="28527000" />
     </task>
     <servers />
   </component>
@@ -281,10 +277,10 @@
       <screen x="0" y="25" width="1680" height="963" />
     </state>
     <state x="578" y="257" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.25.1680.963@0.25.1680.963" timestamp="1617540573152" />
-    <state x="578" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617487328752">
+    <state x="578" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617553990625">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
-    <state x="578" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1680.963@0.25.1680.963" timestamp="1617487328752" />
+    <state x="578" y="265" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.25.1680.963@0.25.1680.963" timestamp="1617553990625" />
     <state width="1638" height="257" key="GridCell.Tab.0.bottom" timestamp="1617232898210">
       <screen x="0" y="25" width="1680" height="963" />
     </state>

@@ -20,6 +20,7 @@
 
                     <div class="card-footer">
                         <button type="submit" class="btn btn-outline-success">Update</button>
+                        <a href="{{ url()->previous() }}" class="btn btn-outline-primary">Back</a>
                     </div>
                 </form>
                 <!-- /.card-body -->

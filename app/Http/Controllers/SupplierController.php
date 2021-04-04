@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Supplier;
 use Illuminate\Http\Request;
 
 class SupplierController extends Controller
@@ -13,7 +14,10 @@ class SupplierController extends Controller
      */
     public function index()
     {
-        //
+
+        $suppliers = Supplier::all();
+
+        return view('suppliers.index', compact('suppliers'));
     }
 
     /**
@@ -23,7 +27,9 @@ class SupplierController extends Controller
      */
     public function create()
     {
-        //
+
+        $suppliers = Supplier::all();
+        return view('suppliers.create', compact('suppliers'));
     }
 
     /**
@@ -34,7 +40,26 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'country' => 'required',
+            'email' => 'required',
+        ]);
+
+        Supplier::create([
+            'name' => $request->name,
+            'address' => $request->address,
+            'country' => $request->country,
+            'phone' => $request->phone,
+            'url' => $request->url,
+            'email' => $request->email,
+            'note' => $request->note,
+        ]);
+
+
+
+        return redirect()->route('suppliers.index');
     }
 
     /**
@@ -56,7 +81,9 @@ class SupplierController extends Controller
      */
     public function edit($id)
     {
-        //
+        $supplier = Supplier::findOrFail($id);
+
+        return view('suppliers.edit', compact('supplier'));
     }
 
     /**
@@ -68,7 +95,27 @@ class SupplierController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $request->validate([
+            'name' => 'required',
+            'address' => 'required',
+            'country' => 'required',
+            'email' => 'required',
+        ]);
+        $supplier = Supplier::findorFail($id);
+
+        $supplier->update([
+            'name' => $request->name,
+            'name' => $request->name,
+            'address' => $request->address,
+            'country' => $request->country,
+            'phone' => $request->phone,
+            'url' => $request->url,
+            'email' => $request->email,
+            'note' => $request->note,
+        ]);
+
+        return redirect()->route('suppliers.index');
     }
 
     /**
