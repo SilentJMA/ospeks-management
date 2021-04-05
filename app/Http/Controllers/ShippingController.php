@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Supplier;
+use App\Shipping;
 use Illuminate\Http\Request;
 
-class SupplierController extends Controller
+class ShippingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,10 @@ class SupplierController extends Controller
      */
     public function index()
     {
+        $shippings = Shipping::all();
 
-        $suppliers = Supplier::all();
+        return view('shippings.index', compact('shippings'));
 
-        return view('suppliers.index', compact('suppliers'));
     }
 
     /**
@@ -27,9 +27,8 @@ class SupplierController extends Controller
      */
     public function create()
     {
+        return view('shippings.create');
 
-        $suppliers = Supplier::all();
-        return view('suppliers.create', compact('suppliers'));
     }
 
     /**
@@ -42,26 +41,15 @@ class SupplierController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'address' => 'required',
-            'country' => 'required',
-            'email' => 'required',
         ]);
 
-        Supplier::create([
+        Shipping::create([
             'name' => $request->name,
-            'address' => $request->address,
-            'country' => $request->country,
-            'phone' => $request->phone,
-            'url' => $request->url,
-            'email' => $request->email,
-            'note' => $request->note,
             'user_id' => auth()->user()->id
-
         ]);
 
+        return redirect()->route('shippings.index');
 
-
-        return redirect()->route('suppliers.index');
     }
 
     /**
@@ -83,9 +71,9 @@ class SupplierController extends Controller
      */
     public function edit($id)
     {
-        $supplier = Supplier::findOrFail($id);
+        $shipping = Shipping::findorFail($id);
 
-        return view('suppliers.edit', compact('supplier'));
+        return view('shippings.edit', compact('shipping'));
     }
 
     /**
@@ -97,28 +85,14 @@ class SupplierController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'country' => 'required',
-            'email' => 'required',
-        ]);
-        $supplier = Supplier::findorFail($id);
-
-        $supplier->update([
+        $shipping = Shipping::findorFail($id);
+        $shipping->update([
             'name' => $request->name,
-            'address' => $request->address,
-            'country' => $request->country,
-            'phone' => $request->phone,
-            'url' => $request->url,
-            'email' => $request->email,
-            'note' => $request->note,
             'user_id' => auth()->user()->id
-
         ]);
 
-        return redirect()->route('suppliers.index');
+        return redirect()->route('shippings.index');
+
     }
 
     /**
@@ -129,6 +103,9 @@ class SupplierController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $shipping = Shipping::findorFail($id);
+        $shipping->delete();
+
+        return redirect()->route('shippings.index');
     }
 }

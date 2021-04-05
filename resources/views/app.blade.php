@@ -72,6 +72,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('shippings.index') }}" class="nav-link {{ (Request::segment(1) =='shippings')? 'active' : '' }}">
+                            <i class="nav-icon fas fa-shipping-fast"></i>
+                            <p>
+                                Shippings
+                                <span class="right badge badge-danger">New</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('categories.index') }}" class="nav-link {{ (Request::segment(1) =='categories')? 'active' : '' }}">
                             <i class="nav-icon fas fa-object-group"></i>
                             <p>

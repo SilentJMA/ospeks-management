@@ -13,7 +13,6 @@ class Product extends Model
         'description',
         'price',
         'sku',
-        'status_id',
         'quantity',
         'category_id',
         'user_id'];
@@ -22,10 +21,7 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class,'category_id');
     }
-    public function status()
-    {
-        return $this->belongsTo(Status::class);
-    }
+
     public function getImageExistAttribute()
     {
         return !is_null($this->image) && file_exists(public_path('images/' .$this->image));

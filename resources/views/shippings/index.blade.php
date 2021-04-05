@@ -7,7 +7,7 @@
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">{{ ucfirst( Request::segment(1)) }}</a></li>
+                <li class="breadcrumb-item"><a href="{{ route('shippings.index') }}">{{ ucfirst( Request::segment(1)) }}</a></li>
             </ol>
         </div>
     </div>
@@ -17,7 +17,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{ route('categories.create') }}" class="btn btn-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
+                            <a href="{{ route('shippings.create') }}" class="btn btn-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -29,13 +29,13 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @forelse( $categories as $category)
+                                @forelse( $shippings as $shipping)
                                     <tr>
-                                    <td>{{ $category->name }}</td>
+                                    <td><i class="fab fa-{{ $shipping->name }} fa-5x"></i></td>
                                     <td class="project-actions text-right">
-                                        <a class="btn btn-info btn-sm" href="{{ route('categories.edit', $category->id) }}">
+                                        <a class="btn btn-info btn-sm" href="{{ route('shippings.edit', $shipping->id) }}">
                                             <i class="fas fa-pencil-alt"></i>Edit</a>
-                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline">
+                                        <form action="{{ route('shippings.destroy', $shipping->id) }}" method="POST" style="display: inline">
                                             @method('DELETE')
                                             @csrf
                                         <input class="btn btn-danger btn-sm" type="submit" value="Delete" onclick="return confirm('Are you sure ?')">
@@ -43,7 +43,7 @@
                                     </td>
                                 </tr>
                                 @empty
-                                    <td coclspan="4">No Categories found</td>
+                                    <td coclspan="4">No shippings found</td>
                                 @endforelse
                             </table>
                         </div>

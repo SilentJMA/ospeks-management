@@ -24,6 +24,7 @@ Route::resource('products', 'ProductController');
 Route::resource('suppliers', 'SupplierController');
 Route::resource('categories', 'CategoryController');
 Route::resource('status', 'StatusController');
+Route::resource('shippings', 'ShippingController');
 Route::resource('settings', 'SettingController');
 
 });

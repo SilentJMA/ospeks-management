@@ -6,7 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Order extends Model
 {
-    protected $fillable = [];
+    protected $fillable = [
+        'product_price',
+        'product_name',
+        'product_quantity',
+        'supplier_name',
+        'shipping_method',
+        'shipping_country',
+        'shipping_tracking',
+        'note',/*
+        'product_id',
+        'supplier_id',*/
+        'status_id',
+        'user_id'];
 
     public function product()
     {
@@ -17,5 +29,9 @@ class Order extends Model
     public function supplier()
     {
         return $this->belongsTo(Supplier::class,'supplier_id');
+    }
+    public function status()
+    {
+        return $this->belongsTo(Status::class,'status_id');
     }
 }
