@@ -14,6 +14,7 @@ class CreateSuppliersTable extends Migration
     public function up()
     {
         Schema::create('suppliers', function (Blueprint $table) {
+            $table->id();
             $table->string('name');
             $table->string('address');
             $table->string('country');
@@ -21,6 +22,7 @@ class CreateSuppliersTable extends Migration
             $table->string('email');
             $table->string('url');
             $table->string('note');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

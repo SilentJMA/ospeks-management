@@ -81,6 +81,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('status.index') }}" class="nav-link {{ (Request::segment(1) =='status')? 'active' : '' }}">
+                            <i class="nav-icon fas fa-exclamation"></i>
+                            <p>
+                                Status
+                                <span class="right badge badge-danger">New</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('settings.index') }}" class="nav-link {{ (Request::segment(1) =='settings')? 'active' : '' }}">
                             <i class="nav-icon fas fa-sliders-h"></i>
                             <p>Settings</p>
@@ -88,7 +97,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="#" onclick="document.getElementById('logout-form').submit()" class="nav-link">
-                            <i class="nav-icon fas fa-tree"></i>
+                            <i class="nav-icon fas fa-door-open"></i>
                             <p>Logout</p>
                         </a>
                     </li>

@@ -44,7 +44,8 @@ class CategoryController extends Controller
         ]);
 
         Category::create([
-            'name' => $request->name
+            'name' => $request->name,
+            'user_id' => auth()->user()->id
         ]);
 
         return redirect()->route('categories.index');
@@ -86,7 +87,9 @@ class CategoryController extends Controller
     {
         $category = Category::findorFail($id);
         $category->update([
-            'name'=> $request->name
+            'name'=> $request->name,
+            'user_id' => auth()->user()->id
+
         ]);
 
         return redirect()->route('categories.index');

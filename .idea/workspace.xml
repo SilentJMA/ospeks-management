@@ -20,20 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="39c28bfd-eb7b-4b12-afc1-5760adf1ee7e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/products/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/suppliers/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/suppliers/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/suppliers/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/35ba96b1-218e-47a7-83bd-8dad3255c223.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/35ba96b1-218e-47a7-83bd-8dad3255c223.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CategoryController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SupplierController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Order.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Supplier.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Supplier.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_01_204407_create_dashboards_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_204407_create_dashboards_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_01_204421_create_orders_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_02_204411_create_orders_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_01_204430_create_products_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_204402_create_products_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_01_204441_create_suppliers_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_204403_create_suppliers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_01_204457_create_settings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_204457_create_settings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_02_134909_create_categories_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_04_01_204401_create_categories_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_03_145531_create_category_product_table.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_04_03_150434_create_foreign_keys_for_category_product_table.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/categories/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/products/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/products/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/products/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/products/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/suppliers/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/suppliers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/suppliers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -243,7 +253,8 @@
       <workItem from="1617450627710" duration="1029000" />
       <workItem from="1617451956774" duration="383000" />
       <workItem from="1617459227465" duration="3573000" />
-      <workItem from="1617463952131" duration="28527000" />
+      <workItem from="1617463952131" duration="28653000" />
+      <workItem from="1617619884860" duration="8339000" />
     </task>
     <servers />
   </component>
@@ -313,18 +324,18 @@
       <screen x="0" y="25" width="1680" height="963" />
     </state>
     <state x="349" y="142" key="SettingsEditor/0.25.1680.963@0.25.1680.963" timestamp="1617463982775" />
-    <state width="595" height="445" key="SwitcherDM" timestamp="1617236837203">
+    <state width="595" height="445" key="SwitcherDM" timestamp="1617630113697">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
-    <state width="595" height="445" key="SwitcherDM/0.25.1680.963@0.25.1680.963" timestamp="1617236837203" />
+    <state width="595" height="445" key="SwitcherDM/0.25.1680.963@0.25.1680.963" timestamp="1617630113696" />
     <state x="745" y="387" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1616596974039">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
     <state x="745" y="387" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.25.1680.963@0.25.1680.963" timestamp="1616596974039" />
-    <state x="702" y="335" width="342" height="343" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1617462149754">
+    <state x="702" y="335" width="342" height="343" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1617621167387">
       <screen x="0" y="25" width="1680" height="963" />
     </state>
-    <state x="702" y="335" width="342" height="343" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.25.1680.963@0.25.1680.963" timestamp="1617462149754" />
+    <state x="702" y="335" width="342" height="343" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.25.1680.963@0.25.1680.963" timestamp="1617621167387" />
     <state x="540" y="142" width="726" height="729" key="find.popup" timestamp="1616597313418">
       <screen x="0" y="25" width="1680" height="963" />
     </state>

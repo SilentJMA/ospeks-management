@@ -18,6 +18,7 @@ class CreateSettingsTable extends Migration
             $table->string('website');
             $table->string('url');
             $table->string('email');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

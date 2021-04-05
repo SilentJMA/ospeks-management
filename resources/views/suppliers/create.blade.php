@@ -40,25 +40,27 @@
                             <label for="exampleInputEmail1">Address</label>
                             <input type="text" class="form-control" name="address" value="{{ old('address') }}" placeholder="Enter address" />
                         </div>
-                        <div class="form-group">
+                        <div class="form-row">
+                            <div class="form-group col-md-2">
+                                <label for="exampleInputEmail1">Country</label>
+                                <input type="text" class="form-control" name="country" value="{{ old('country') }}" />
+                            </div>
+                        <div class="form-group col-md-3">
                             <label for="exampleInputEmail1">Phone</label>
                             <input type="tel" class="form-control" name="phone" value="{{ old('phone') }}" />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group col-md-3">
                             <label for="exampleInputEmail1">Email</label>
                             <input class="form-control" name="email" value="{{ old('email') }}" type="email"  />
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Country</label>
-                            <input type="country" class="form-control" name="country" value="{{ old('country') }}" />
-                        </div>
-                        <div class="form-group">
+                        <div class="form-group col-md-3">
                             <label for="exampleInputFile">URL</label>
                             <input type="url" class="form-control" name="url" value="{{ old('url') }}" />
                         </div>
+                        </div>
                         <div class="form-group">
                             <label>Note</label>
-                            <textarea class="form-control" name ="note" rows="3" placeholder="Enter ...">{{ old('address') }}</textarea>
+                            <textarea class="form-control" name ="note" rows="3" placeholder="Enter ...">{{ old('note') }}</textarea>
                         </div>
                     </div>
                     <!-- /.card-body -->

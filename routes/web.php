@@ -23,6 +23,7 @@ Route::resource('orders', 'OrderController');
 Route::resource('products', 'ProductController');
 Route::resource('suppliers', 'SupplierController');
 Route::resource('categories', 'CategoryController');
+Route::resource('status', 'StatusController');
 Route::resource('settings', 'SettingController');
 
 });

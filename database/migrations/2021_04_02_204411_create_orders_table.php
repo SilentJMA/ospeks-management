@@ -23,6 +23,10 @@ class CreateOrdersTable extends Migration
             $table->string('shipping_country');
             $table->string('shipping_tracking');
             $table->string('note');
+            $table->foreignId('product_id')->constrained()->onDelete('cascade');
+            $table->foreignId('supplier_id')->constrained()->onDelete('cascade');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('status_id')->constrained('status')->onDelete('cascade');
             $table->timestamps();
         });
     }

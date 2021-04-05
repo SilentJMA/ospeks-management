@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Supplier;
+use App\Status;
 use Illuminate\Http\Request;
 
-class SupplierController extends Controller
+class StatusController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,10 @@ class SupplierController extends Controller
      */
     public function index()
     {
+        $status = Status::all();
 
-        $suppliers = Supplier::all();
+        return view('status.index', compact('status'));
 
-        return view('suppliers.index', compact('suppliers'));
     }
 
     /**
@@ -27,9 +27,8 @@ class SupplierController extends Controller
      */
     public function create()
     {
+        return view('status.create');
 
-        $suppliers = Supplier::all();
-        return view('suppliers.create', compact('suppliers'));
     }
 
     /**
@@ -42,26 +41,16 @@ class SupplierController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'address' => 'required',
-            'country' => 'required',
-            'email' => 'required',
+
         ]);
 
-        Supplier::create([
+        Status::create([
             'name' => $request->name,
-            'address' => $request->address,
-            'country' => $request->country,
-            'phone' => $request->phone,
-            'url' => $request->url,
-            'email' => $request->email,
-            'note' => $request->note,
             'user_id' => auth()->user()->id
-
         ]);
 
+        return redirect()->route('status.index');
 
-
-        return redirect()->route('suppliers.index');
     }
 
     /**
@@ -83,9 +72,9 @@ class SupplierController extends Controller
      */
     public function edit($id)
     {
-        $supplier = Supplier::findOrFail($id);
+        $status = Status::findorFail($id);
 
-        return view('suppliers.edit', compact('supplier'));
+        return view('status.edit', compact('status'));
     }
 
     /**
@@ -97,29 +86,14 @@ class SupplierController extends Controller
      */
     public function update(Request $request, $id)
     {
-
-        $request->validate([
-            'name' => 'required',
-            'address' => 'required',
-            'country' => 'required',
-            'email' => 'required',
-        ]);
-        $supplier = Supplier::findorFail($id);
-
-        $supplier->update([
-            'name' => $request->name,
-            'name' => $request->name,
-            'address' => $request->address,
-            'country' => $request->country,
-            'phone' => $request->phone,
-            'url' => $request->url,
-            'email' => $request->email,
-            'note' => $request->note,
+        $status = Status::findorFail($id);
+        $status->update([
+            'name'=> $request->name,
             'user_id' => auth()->user()->id
-
         ]);
 
-        return redirect()->route('suppliers.index');
+        return redirect()->route('status.index');
+
     }
 
     /**
@@ -130,6 +104,9 @@ class SupplierController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $status = Status::findorFail($id);
+        $status->delete();
+
+        return redirect()->route('status.index');
     }
 }

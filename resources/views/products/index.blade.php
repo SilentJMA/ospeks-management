@@ -26,6 +26,7 @@
                                 <tr>
                                     <th>Image</th>
                                     <th>Name</th>
+                                    <th>Category</th>
                                     <th>Description</th>
                                     <th>SKU</th>
                                     <th>Price - <i class="fas fa-euro-sign"></i></th>
@@ -38,6 +39,7 @@
                                     <tr>
                                     <td><img src="{{ $product->image }}" title="{{ $product->name }}" alt="{{ $product->name }}" width="50" height="50"></td>
                                     <td>{{ $product->name }}</td>
+                                    <td>{{ $product->category->name }}</td>
                                     <td>{{ $product->description }}</td>
                                     <td>{{ $product->sku }}</td>
                                     <td>{{ $product->price }}</td>

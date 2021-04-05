@@ -35,6 +35,10 @@
                         <table class="table table-sm table-borderless mb-0">
                             <tbody>
                             <tr>
+                                <th class="pl-0 w-25" scope="row"><strong>Category</strong></th>
+                                <td>{{ $product->category->name }}</td>
+                            </tr>
+                            <tr>
                                 <th class="pl-0 w-25" scope="row"><strong>Price</strong></th>
                                 <td>{{ $product->price }}</td>
                             </tr>

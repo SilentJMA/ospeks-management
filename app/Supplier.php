@@ -13,5 +13,5 @@ class Supplier extends Model
         'url',
         'phone',
         'country',
-        'email'];
+        'email','user_id'];
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Product;
+use App\Status;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,7 +16,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::with('categories')->get();
+        $products = Product::with('category')->get();
 
         return view('products.index', compact('products'));
     }
@@ -53,6 +54,9 @@ class ProductController extends Controller
             'price' => $request->price,
             'sku' => $request->sku,
             'quantity' => $request->quantity,
+            'category_id' => $request->category_id,
+            'user_id' => auth()->user()->id
+
         ]);
 
 
@@ -83,7 +87,6 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $categories = Category::all();
-
         return view('products.edit', compact('product','categories'));
     }
 
@@ -101,6 +104,7 @@ class ProductController extends Controller
             'name' => 'required',
             'price' => 'required',
             'sku' => 'required',
+            'category_id' => 'required',
         ]);
         $product = Product::findorFail($id);
 
@@ -111,6 +115,8 @@ class ProductController extends Controller
             'price' => $request->price,
             'sku' => $request->sku,
             'quantity' => $request->quantity,
+            'category_id' => $request->category_id,
+            'user_id' => auth()->user()->id
         ]);
 
         return redirect()->route('products.index');

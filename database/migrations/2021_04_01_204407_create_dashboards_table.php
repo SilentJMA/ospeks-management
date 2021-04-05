@@ -16,9 +16,7 @@ class CreateDashboardsTable extends Migration
         Schema::create('dashboards', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-
-            //$table->unsignedBigInteger('user_id');
-            //$table->foreign('user_id')->nullable()->constrained('users');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
