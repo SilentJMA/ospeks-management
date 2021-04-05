@@ -9,9 +9,10 @@ It's a light weight Application and i'm working on it.
 it will contain :
 - Products => Done
 - Categories => Done
-- Suppliers =>.....
+- Suppliers => Done
 - Orders
-- Shipping
+- Shipping => Done
+- Status => Done
 - Reports
 - Settings
 - 
