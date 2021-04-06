@@ -25,7 +25,7 @@
                                 <thead>
                                 <tr>
                                     <th>Date</th>
-                                    <th>Name</th>
+                                    <th>SKU</th>
                                     <th>Quantity</th>
                                     <th>Order Total - <i class="fas fa-euro-sign"></i></th>
                                     <th>Supplier</th>
@@ -39,11 +39,11 @@
                                 @forelse( $orders as $order)
                                     <tr>
                                     <td>{{ $order->order_date }}</td>
-                                    <td><a href="{{ url('products/' . $order->product_id) }}">{{ $order->product->name }}</a></td>
+                                    <td><a href="{{ url('products/' . $order->product_id) }}">{{ $order->product->sku }}</a></td>
                                     <td>{{ $order->product_quantity }}</td>
-                                    <td>{{ $order->product_price * $order->product_quantity}}</td>
+                                    <td>{{ $order->order_cost}}</td>
                                     <td>{{ $order->supplier->name }}</td>
-                                    <td>{{ $order->shipping_cost }}</td>
+                                    <td>{{ $order->shipping_country }}</td>
                                     <td><i class="fab fa-{{ $order->shipping->name }} fa-3x"></i></td>
                                     <td>{{ $order->note }}</td>
                                     <td class="project-actions text-center">

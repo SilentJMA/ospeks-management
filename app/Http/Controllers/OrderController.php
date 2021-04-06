@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Notifications\NewOrderNotification;
 use App\Order;
 use App\Product;
 use App\Shipping;
 use App\Status;
 use App\Supplier;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Notification;
 
 class OrderController extends Controller
 {
@@ -58,10 +59,11 @@ class OrderController extends Controller
             'status_id' => 'required',
         ]);
 
-        Order::create([
+        $order = Order::create([
             'product_price' => $request->product_price,
             'product_quantity' => $request->product_quantity,
             'shipping_cost' => $request->shipping_cost,
+            'order_cost' => ($request->product_price*$request->product_quantity)+$request->shipping_cost,
             'shipping_country' => $request->shipping_country,
             'shipping_tracking' => $request->shipping_tracking,
             'order_date' => $request->order_date,
@@ -73,10 +75,10 @@ class OrderController extends Controller
             'user_id' => auth()->user()->id
 
         ]);
+        $order->save();
+        Notification::send(auth()->user(), new NewOrderNotification($order));
 
-
-
-        return redirect()->route('orders.index');
+        return redirect()->route('orders.index',compact('order'));
     }
 
     /**
@@ -137,6 +139,7 @@ class OrderController extends Controller
             'product_price' => $request->product_price,
             'product_quantity' => $request->product_quantity,
             'shipping_cost' => $request->shipping_cost,
+            'order_cost' => ($request->product_price*$request->product_quantity)+$request->shipping_cost,
             'shipping_country' => $request->shipping_country,
             'shipping_tracking' => $request->shipping_tracking,
             'note' => $request->note,

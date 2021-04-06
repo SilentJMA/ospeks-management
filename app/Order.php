@@ -5,9 +5,11 @@ namespace App;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
 
 class Order extends Model
 {
+
     protected function serializeDate(DateTimeInterface $date)
     {
         return $date->format('d-m-Y');
@@ -16,6 +18,7 @@ class Order extends Model
         'product_price',
         'product_quantity',
         'shipping_cost',
+        'order_cost',
         'shipping_country',
         'shipping_tracking',
         'note',

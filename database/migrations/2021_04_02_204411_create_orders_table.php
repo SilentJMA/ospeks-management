@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->decimal('product_price');
             $table->string('product_quantity');
             $table->string('shipping_cost');
+            $table->decimal('order_cost');
             $table->string('shipping_country');
             $table->string('shipping_tracking');
             $table->date('order_date')->nullable();

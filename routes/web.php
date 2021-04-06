@@ -19,6 +19,10 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function (){
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::get('/markAsRead', function (){
+    auth()->user()->unreadNotifications->markAsRead();
+
+});
 Route::resource('orders', 'OrderController');
 Route::resource('products', 'ProductController');
 Route::resource('suppliers', 'SupplierController');

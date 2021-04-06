@@ -32,6 +32,49 @@
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+            </li>
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="{{ route('dashboard') }}" class="nav-link">Home</a>
+            </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link" data-toggle="dropdown" href="#">
+                    <i class="far fa-bell"></i>
+                    <span class="badge badge-warning navbar-badge">{{count(auth()->user()->unreadNotifications)}}</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                    @forelse(auth()->user()->unreadNotifications  as $notification)
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item" id= "markAsRead" onclick="markNotificationAsRead()">
+                            {{ $notification->created_at }} Order {{ $notification->data['id'] }}  ({{ $notification->data['order_cost'] }})
+                        </a>
+                    @empty
+                        There are no new notifications
+                    @endforelse
+                    <div class="dropdown-divider"></div>
+                    <a href="{{ route('orders.index') }}" class="dropdown-item dropdown-footer">See All Orders</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-expand-arrows-alt"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                    <i class="fas fa-door-open"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
@@ -102,12 +145,6 @@
                         <a href="{{ route('settings.index') }}" class="nav-link {{ (Request::segment(1) =='settings')? 'active' : '' }}">
                             <i class="nav-icon fas fa-sliders-h"></i>
                             <p>Settings</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" onclick="document.getElementById('logout-form').submit()" class="nav-link">
-                            <i class="nav-icon fas fa-door-open"></i>
-                            <p>Logout</p>
                         </a>
                     </li>
                     <form action="{{ route('logout') }}" action="POST" id="logout-form">
@@ -217,6 +254,11 @@
         $('#order_date').datepicker({
             format: 'mm/dd/yyyy',
         });
+        function markNotificationAsRead(notificationCount) {
+            if(notificationCount !=='0'){
+                $.get('/markAsRead');
+            }
+        };
     });
 </script>
 </body>

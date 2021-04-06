@@ -8,6 +8,7 @@ use App\Product;
 use App\Supplier;
 use Illuminate\Http\Request;
 use App\Dashboard;
+use LaravelDaily\LaravelCharts\Classes\LaravelChart;
 
 class DashboardController extends Controller
 {
@@ -23,12 +24,14 @@ class DashboardController extends Controller
     }
     public function index()
     {
+
+        $notifications = auth()->user()->unreadNotifications;
         $orders = Order::all()->count();
         $products = Product::all()->count();
         $categories = Category::all()->count();
         $suppliers = Supplier::all()->count();
 
-        return view('dashboard',compact('orders','products','suppliers','categories'));
+        return view('dashboard',compact('orders','products','suppliers','categories','notifications'));
 
     }
 
@@ -97,4 +100,5 @@ class DashboardController extends Controller
     {
         //
     }
+
 }
