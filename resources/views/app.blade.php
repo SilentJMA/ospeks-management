@@ -213,6 +213,10 @@
             "autoWidth": false,
             "responsive": true,
         });
+        //Date picker
+        $('#order_date').datepicker({
+            format: 'mm/dd/yyyy',
+        });
     });
 </script>
 </body>

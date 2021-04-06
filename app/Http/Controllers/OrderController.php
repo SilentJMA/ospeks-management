@@ -18,7 +18,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::with('status')->get();
+        $orders = Order::with(['status', 'supplier', 'shipping', 'product'])->get();
 
         return view('orders.index', compact('orders'));    }
 
@@ -47,10 +47,12 @@ class OrderController extends Controller
     {
         $request->validate([
             'product_price' => 'required',
-            'product_name' => 'required',
+            'product_id' => 'required',
             'product_quantity' => 'required',
-            'supplier_name' => 'required',
-            'shipping_method' => 'required',
+            'order_date' => 'required',
+            'supplier_id' => 'required',
+            'shipping_id' => 'required',
+            'shipping_cost' => 'required',
             'shipping_country' => 'required',
             'shipping_tracking' => 'required',
             'status_id' => 'required',
@@ -58,13 +60,15 @@ class OrderController extends Controller
 
         Order::create([
             'product_price' => $request->product_price,
-            'product_name' => $request->product_name,
             'product_quantity' => $request->product_quantity,
-            'supplier_name' => $request->supplier_name,
-            'shipping_method' => $request->shipping_method,
+            'shipping_cost' => $request->shipping_cost,
             'shipping_country' => $request->shipping_country,
             'shipping_tracking' => $request->shipping_tracking,
+            'order_date' => $request->order_date,
             'note' => $request->note,
+            'product_id' => $request->product_id,
+            'shipping_id' => $request->shipping_id,
+            'supplier_id' => $request->supplier_id,
             'status_id' => $request->status_id,
             'user_id' => auth()->user()->id
 
@@ -83,7 +87,9 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::findOrFail($id);
+
+        return view('orders.show', compact('order'));
     }
 
     /**
@@ -94,7 +100,13 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $order= Order::findOrFail($id);
+        $status = Status::all();
+        $products = Product::all();
+        $suppliers = Supplier::all();
+        $shippings = Shipping::all();
+
+        return view('orders.edit', compact('order','status','shippings','products','suppliers'));
     }
 
     /**
@@ -106,7 +118,40 @@ class OrderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'product_price' => 'required',
+            'product_id' => 'required',
+            'product_quantity' => 'required',
+            'order_date' => 'required',
+            'supplier_id' => 'required',
+            'shipping_id' => 'required',
+            'shipping_cost' => 'required',
+            'shipping_country' => 'required',
+            'shipping_tracking' => 'required',
+            'status_id' => 'required',
+        ]);
+
+        $order = Order::findorFail($id);
+
+        $order->update([
+            'product_price' => $request->product_price,
+            'product_quantity' => $request->product_quantity,
+            'shipping_cost' => $request->shipping_cost,
+            'shipping_country' => $request->shipping_country,
+            'shipping_tracking' => $request->shipping_tracking,
+            'note' => $request->note,
+            'order_date' => $request->order_date,
+            'product_id' => $request->product_id,
+            'shipping_id' => $request->shipping_id,
+            'supplier_id' => $request->supplier_id,
+            'status_id' => $request->status_id,
+            'user_id' => auth()->user()->id
+
+        ]);
+
+
+
+        return redirect()->route('orders.index');
     }
 
     /**
@@ -117,6 +162,9 @@ class OrderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $order = Product::findOrFail($id);
+        $order->delete();
+
+        return redirect()->route('orders.index');
     }
 }

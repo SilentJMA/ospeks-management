@@ -45,13 +45,13 @@
                                     <td>{{ $product->price }}</td>
                                     <td>{{ $product->quantity }}</td>
                                     <td class="project-actions text-center">
-                                        <a class="btn btn-primary btn-sm" href="{{ route('products.show', $product->id) }}"><i class="fas fa-folder"></i> View</a>
-                                        <a class="btn btn-info btn-sm" href="{{ route('products.edit', $product->id) }}">
+                                        <a class="btn btn-outline-primary btn-sm" href="{{ route('products.show', $product->id) }}"><i class="fas fa-folder"></i> View</a>
+                                        <a class="btn btn-outline-info btn-sm" href="{{ route('products.edit', $product->id) }}">
                                             <i class="fas fa-pencil-alt"></i>Edit</a>
                                         <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display: inline">
                                             @method('DELETE')
                                             @csrf
-                                        <input class="btn btn-danger btn-sm" type="submit" value="Delete" onclick="return confirm('Are you sure ?')">
+                                        <input class="btn btn-outline-danger btn-sm" type="submit" value="Delete" onclick="return confirm('Are you sure ?')">
                                         </form>
                                     </td>
                                 </tr>

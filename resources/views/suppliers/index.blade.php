@@ -45,12 +45,12 @@
                                     <td>{{ $supplier->url }}</td>
                                     <td>{{ $supplier->note }}</td>
                                     <td class="project-actions text-center">
-                                       <a class="btn btn-info btn-sm" href="{{ route('suppliers.edit', $supplier->id) }}">
+                                       <a class="btn btn-outline-info btn-sm" href="{{ route('suppliers.edit', $supplier->id) }}">
                                            <i class="fas fa-pencil-alt"></i>Edit</a>
                                        <form action="{{ route('suppliers.destroy', $supplier->id) }}" method="POST" style="display: inline">
                                            @method('DELETE')
                                            @csrf
-                                       <input class="btn btn-danger btn-sm" type="submit" value="Delete" onclick="return confirm('Are you sure ?')">
+                                       <input class="btn btn-outline-danger btn-sm" type="submit" value="Delete" onclick="return confirm('Are you sure ?')">
                                        </form>
                                     </td>
                                 </tr>

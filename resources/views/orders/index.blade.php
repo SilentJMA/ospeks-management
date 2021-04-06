@@ -24,6 +24,7 @@
                             <table id="example1" class="table table-bordered table-striped text-center">
                                 <thead>
                                 <tr>
+                                    <th>Date</th>
                                     <th>Name</th>
                                     <th>Quantity</th>
                                     <th>Order Total - <i class="fas fa-euro-sign"></i></th>
@@ -37,21 +38,22 @@
                                 <tbody>
                                 @forelse( $orders as $order)
                                     <tr>
-                                    <td>{{ $order->product_name }}</td>
+                                    <td>{{ $order->order_date }}</td>
+                                    <td><a href="{{ url('products/' . $order->product_id) }}">{{ $order->product->name }}</a></td>
                                     <td>{{ $order->product_quantity }}</td>
                                     <td>{{ $order->product_price * $order->product_quantity}}</td>
-                                    <td>{{ $order->supplier_name }}</td>
-                                    <td>{{ $order->shipping_country }}</td>
-                                    <td><i class="fab fa-{{ $order->shipping_method }} fa-3x"></i></td>
+                                    <td>{{ $order->supplier->name }}</td>
+                                    <td>{{ $order->shipping_cost }}</td>
+                                    <td><i class="fab fa-{{ $order->shipping->name }} fa-3x"></i></td>
                                     <td>{{ $order->note }}</td>
                                     <td class="project-actions text-center">
-                                        <a class="btn btn-primary btn-sm" href="{{ route('orders.show', $order->id) }}"><i class="fas fa-folder"></i> View</a>
-                                        <a class="btn btn-info btn-sm" href="{{ route('orders.edit', $order->id) }}">
+                                        <a class="btn btn-outline-primary btn-sm" href="{{ route('orders.show', $order->id) }}"><i class="fas fa-folder"></i> View</a>
+                                        <a class="btn btn-outline-info btn-sm" href="{{ route('orders.edit', $order->id) }}">
                                             <i class="fas fa-pencil-alt"></i>Edit</a>
                                         <form action="{{ route('orders.destroy', $order->id) }}" method="POST" style="display: inline">
                                             @method('DELETE')
                                             @csrf
-                                        <input class="btn btn-danger btn-sm" type="submit" value="Delete" onclick="return confirm('Are you sure ?')">
+                                        <input class="btn btn-outline-danger btn-sm" type="submit" value="Delete" onclick="return confirm('Are you sure ?')">
                                         </form>
                                     </td>
                                 </tr>
