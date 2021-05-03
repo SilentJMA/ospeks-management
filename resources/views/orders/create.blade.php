@@ -104,7 +104,7 @@
                         </div>
                         <div class="form-group">
                             <label>Order Note</label>
-                            <textarea class="form-control" name ="note" rows="3" placeholder="Enter ...">{{ old(' note ') }}</textarea>
+                            <textarea class="form-control" name ="note" rows="3" placeholder="Enter ..." id="ckeditor">{{ old(' note ') }}</textarea>
                         </div>
                     </div>
                     <!-- /.card-body -->

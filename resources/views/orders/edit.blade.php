@@ -105,7 +105,7 @@
                         </div>
                         <div class="form-group">
                             <label>Order Note</label>
-                            <textarea class="form-control" name ="note" rows="3" placeholder="Enter ...">{{ $order->note }}</textarea>
+                            <textarea class="form-control" name ="note" rows="3" placeholder="Enter ..." id="ckeditor">{{ $order->note }}</textarea>
                         </div>
                     </div>
                     <!-- /.card-body -->

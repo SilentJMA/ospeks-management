@@ -60,7 +60,7 @@
                                         <td>{{ $order->product_quantity }}</td>
                                         <td>{{ $order->product->name }}</td>
                                         <td>{{ $order->product->sku }}</td>
-                                        <td>{{ $order->product->description }}</td>
+                                        <td>{!! $order->product->description !!}</td>
                                         <td>{{ $order->product_price }} <i class="fas fa-euro-sign"></i></td>
                                         <td>{{ $order->shipping->name }}</td>
                                     </tr>
@@ -84,7 +84,7 @@
                                 <div class="table-responsive">
                                     <table class="table">
                                         <tr>
-                                            <th style="width:50%">Quantity :</th>
+                                            <th style="width:50%;">Quantity :</th>
                                             <td>{{ $order->product_quantity}}</td>
                                         </tr>
                                         <tr>

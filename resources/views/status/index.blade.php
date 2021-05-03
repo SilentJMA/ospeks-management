@@ -17,7 +17,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{ route('status.create') }}" class="btn btn-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
+                            <a href="{{ route('status.create') }}" class="btn btn-outline-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">

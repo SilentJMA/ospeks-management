@@ -17,7 +17,7 @@
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item"><a href="/categories">{{ ucfirst( Request::segment(1)) }}</a></li>
+                    <li class="breadcrumb-item"><a href="{{ route('categories.index') }}">{{ ucfirst( Request::segment(1)) }}</a></li>
                     <li class="breadcrumb-item active">Add {{ ucfirst( Request::segment(1)) }}</li>
                 </ol>
             </div>
@@ -34,7 +34,9 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">Name</label>
-                            <input type="text" class="form-control" name="name" placeholder="Enter name">
+                            <label>
+                                <input type="text" class="form-control" name="name" placeholder="Enter name">
+                            </label>
                         </div>
                     </div>
                     <!-- /.card-body -->

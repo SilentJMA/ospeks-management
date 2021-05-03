@@ -11,13 +11,12 @@
             </ol>
         </div>
     </div>
-    </div>
-            <div class="row">
+    <div class="row">
                 <div class="col-12">
 
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{ route('orders.create') }}" class="btn btn-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
+                            <a href="{{ route('orders.create') }}" class="btn btn-outline-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
@@ -44,13 +43,16 @@
                                     <td>{{ $order->order_cost}}</td>
                                     <td>{{ $order->supplier->name }}</td>
                                     <td>{{ $order->shipping_country }}</td>
-                                    <td><i class="fab fa-{{ $order->shipping->name }} fa-3x"></i></td>
-                                    <td>{{ $order->note }}</td>
-                                    <td class="project-actions text-center">
-                                        <a class="btn btn-outline-primary btn-sm" href="{{ route('orders.show', $order->id) }}"><i class="fas fa-folder"></i> View</a>
+                                    <td>
+                                        <span class="badge badge-success">{{ $order->status->name }}</span>
+
+                                    </td>
+                                    <td>{!! $order->note !!}</td>
+                                    <td class="project-actions align-middle">
+                                        <a class="btn btn-outline-secondary btn-sm" href="{{ route('orders.show', $order->id) }}"><i class="fas fa-eye"></i> View</a>
                                         <a class="btn btn-outline-info btn-sm" href="{{ route('orders.edit', $order->id) }}">
                                             <i class="fas fa-pencil-alt"></i>Edit</a>
-                                        <form action="{{ route('orders.destroy', $order->id) }}" method="POST" style="display: inline">
+                                        <form action="{{ route('orders.destroy', $order->id) }}" method="POST" style="display: inline;">
                                             @method('DELETE')
                                             @csrf
                                         <input class="btn btn-outline-danger btn-sm" type="submit" value="Delete" onclick="return confirm('Are you sure ?')">
@@ -58,7 +60,7 @@
                                     </td>
                                 </tr>
                                 @empty
-                                    <td coclspan="4">No orders found</td>
+                                    <td colspan="4">No orders found</td>
                                 @endforelse
                             </table>
                         </div>

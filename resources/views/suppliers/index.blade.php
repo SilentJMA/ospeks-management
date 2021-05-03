@@ -17,7 +17,7 @@
 
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{ route('suppliers.create') }}" class="btn btn-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
+                            <a href="{{ route('suppliers.create') }}" class="btn btn-outline-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
@@ -43,7 +43,7 @@
                                     <td>{{ $supplier->phone }}</td>
                                     <td>{{ $supplier->email }}</td>
                                     <td>{{ $supplier->url }}</td>
-                                    <td>{{ $supplier->note }}</td>
+                                    <td>{!! $supplier->note !!}</td>
                                     <td class="project-actions text-center">
                                        <a class="btn btn-outline-info btn-sm" href="{{ route('suppliers.edit', $supplier->id) }}">
                                            <i class="fas fa-pencil-alt"></i>Edit</a>

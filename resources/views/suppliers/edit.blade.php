@@ -39,7 +39,7 @@
                         </div>
                         <div class="form-group">
                             <label>Address</label>
-                            <textarea class="form-control" name ="address" rows="3" placeholder="Enter ...">{{ $supplier->address }}</textarea>
+                            <textarea class="form-control" name ="address" rows="3" placeholder="Enter ..." id="ckeditor">{{ $supplier->address }}</textarea>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Country</label>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-group">
                             <label>Note</label>
-                            <textarea class="form-control" name ="note" rows="3" placeholder="Enter ...">{{ $supplier->note }}</textarea>
+                            <textarea class="form-control" name ="note" rows="3" placeholder="Enter ..." id="ckeditor">{{ $supplier->note }}</textarea>
                         </div>
                     </div>
                     <!-- /.card-body -->

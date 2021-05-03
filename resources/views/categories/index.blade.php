@@ -11,13 +11,12 @@
             </ol>
         </div>
     </div>
-    </div>
             <div class="row">
                 <div class="col-12">
 
                     <div class="card">
                         <div class="card-header">
-                            <a href="{{ route('categories.create') }}" class="btn btn-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
+                            <a href="{{ route('categories.create') }}" class="btn btn-outline-success float-right"><i class="fas fa-plus"></i> Add {{ ucfirst( Request::segment(1)) }}</a>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -35,7 +34,7 @@
                                     <td class="project-actions text-right">
                                         <a class="btn btn-outline-info btn-sm" href="{{ route('categories.edit', $category->id) }}">
                                             <i class="fas fa-pencil-alt"></i>Edit</a>
-                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline">
+                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST" style="display: inline;">
                                             @method('DELETE')
                                             @csrf
                                         <input class="btn btn-outline-danger btn-sm" type="submit" value="Delete" onclick="return confirm('Are you sure ?')">
@@ -43,7 +42,7 @@
                                     </td>
                                 </tr>
                                 @empty
-                                    <td coclspan="4">No Categories found</td>
+                                    <td colspan="4">No Categories found</td>
                                 @endforelse
                             </table>
                         </div>

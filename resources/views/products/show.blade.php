@@ -59,7 +59,7 @@
             <div class="card border-light mb-3">
                 <div class="card-header bg-secondary text-white text-uppercase"><i class="fa fa-align-justify"></i> Description</div>
                 <div class="card-body">
-                    <p class="card-text">{{ $product->description }}</p>
+                    <p class="card-text">{!! $product->description !!}</p>
                 </div>
             </div>
         </div>

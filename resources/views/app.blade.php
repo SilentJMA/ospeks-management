@@ -117,19 +117,13 @@
                     <li class="nav-item">
                         <a href="{{ route('shippings.index') }}" class="nav-link {{ (Request::segment(1) =='shippings')? 'active' : '' }}">
                             <i class="nav-icon fas fa-shipping-fast"></i>
-                            <p>
-                                Shippings
-                                <span class="right badge badge-danger">New</span>
-                            </p>
+                            <p>Shippings</p>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="{{ route('categories.index') }}" class="nav-link {{ (Request::segment(1) =='categories')? 'active' : '' }}">
                             <i class="nav-icon fas fa-object-group"></i>
-                            <p>
-                                Categories
-                                <span class="right badge badge-danger">New</span>
-                            </p>
+                            <p>Categories</p>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -141,15 +135,6 @@
                             </p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('settings.index') }}" class="nav-link {{ (Request::segment(1) =='settings')? 'active' : '' }}">
-                            <i class="nav-icon fas fa-sliders-h"></i>
-                            <p>Settings</p>
-                        </a>
-                    </li>
-                    <form action="{{ route('logout') }}" action="POST" id="logout-form">
-                        @csrf
-                    </form>
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->
@@ -230,6 +215,8 @@
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{ asset('dist/js/demo.js') }}"></script>
+<!-- CKeditor 5 -->
+<script src="{{ asset('js/ckeditor5/ckeditor.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
 <script src="{{ asset('plugins/datatables-buttons/js/buttons.colVis.min.js') }}"></script>
@@ -260,6 +247,11 @@
             }
         };
     });
+    ClassicEditor
+        .create( document.querySelector( '#ckeditor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
 </script>
 </body>
 </html>

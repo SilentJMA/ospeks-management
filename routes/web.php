@@ -24,6 +24,7 @@ Route::get('/markAsRead', function (){
 
 });
 Route::resource('orders', 'OrderController');
+Route::post('update-order-status','OrderController@UpdateOrderStatus');
 Route::resource('products', 'ProductController');
 Route::resource('suppliers', 'SupplierController');
 Route::resource('categories', 'CategoryController');
